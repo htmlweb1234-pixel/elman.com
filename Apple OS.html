@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elman P. Zebua | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'StretchPro';
+            src: url('https://fonts.cdnfonts.com/s/85420/StretchPro.woff');
+        }
+
+        :root {
+            --bg-dark: #07010d;
+            --neon-purple: #A000FF;
+            --neon-ice blue;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .font-stretch { font-family: 'StretchPro', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .outline-hello {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18vw;
+            font-family: 'StretchPro', sans-serif;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+            z-index: 0;
+            white-space: nowrap;
+        }
+
+        .radial-glow {
+            position: absolute;
+            top: 50%;
+            right: 15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(160, 0, 255, 0.4) 0%, rgba(7, 1, 13, 0) 70%);
+            z-index: 1;
+        }
+
+        #nav-indicator {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-in {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .social-sidebar img {
+            width: 32px;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+        .social-sidebar img:hover { opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="h-screen w-screen relative flex flex-col p-8 box-border">
+
+    <div class="outline-hello">HELLO</div>
+    <div class="radial-glow"></div>
+
+    <header class="relative z-50 flex justify-between items-start">
+        <div class="text-4xl font-black text-white/90 tracking-tighter">Man</div>
+        
+        <nav class="glass rounded-full p-1 flex items-center relative" id="bento-nav">
+            <div id="nav-indicator" class="absolute h-[85%] rounded-full bg-white/10 z-0"></div>
+            <button class="px-6 py-2 rounded-full relative z-10 text-sm font-bold text-white/40 hover:text-white transition" onclick="moveIndicator(this)">Home</button>
+            <button class="px-6 py-2 rounded-full relative z-10 text-sm font-bold text-white/40 hover:text-white transition" onclick="moveIndicator(this)">Detail</button>
+            <button class="px-6 py-2 rounded-full relative z-10 text-sm font-bold text-white/40 hover:text-white transition" onclick="moveIndicator(this)">About me</button>
+            <button class="px-6 py-2 rounded-full relative z-10 text-sm font-bold text-white/40 hover:text-white transition" onclick="moveIndicator(this)">Contact</button>
+            <button class="px-8 py-2 rounded-full relative z-10 text-sm font-bold bg-[#A000FF]" onclick="moveIndicator(this)">Profile</button>
+        </nav>
+
+        <div class="w-10 h-10 rotate-45 rounded-lg border-2 border-white/20 bg-gradient-to-br from-purple-600 to-blue-500 shadow-xl"></div>
+    </header>
+
+    <main class="flex-1 flex relative items-center">
+        <div class="w-[45%] z-20 space-y-6">
+            <div class="stagger-in" style="animation-delay: 0.1s">
+                <p class="text-xl font-bold text-white/80">project kecil</p>
+                <h1 class="font-stretch text-5xl mt-2 leading-tight uppercase">Elman P. Zebua<br>UI/UX</h1>
+                <p class="text-lg text-white/40 font-medium lowercase">masih pemula bosku</p>
+            </div>
+
+            <div class="flex gap-3 stagger-in" style="animation-delay: 0.3s">
+                <button class="px-8 py-3 bg-[#A000FF] rounded-xl font-bold text-sm active:scale-95 transition">Massage</button>
+                <button class="px-8 py-3 border-2 border-white/10 bg-white/5 rounded-xl font-bold text-sm active:scale-95 transition">Follow me</button>
+            </div>
+
+            <div class="glass rounded-2xl p-5 w-56 flex items-center gap-4 stagger-in" style="animation-delay: 0.5s">
+                <div class="flex -space-x-3">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#07010d] bg-gray-600"></div>
+                    <div class="w-10 h-10 rounded-full border-2 border-[#07010d] bg-blue-600"></div>
+                </div>
+                <div>
+                    <p class="text-xl font-black leading-none">10</p>
+                    <p class="text-xs text-white/40 font-bold uppercase">Pengikut</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute right-0 bottom-0 h-[95%] w-1/2 flex justify-end items-end z-30">
+            <img src="https://www.image2url.com/r2/default/files/1776533598791-dd34f98c-187f-4f58-8e15-107718d4b907.png" 
+                 alt="Portrait" 
+                 class="h-full object-contain translate-y-10">
+            
+            <div class="social-sidebar absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pr-4">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png">
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 glass rounded-[35px] py-8 px-12 flex items-center justify-between overflow-hidden">
+        <div class="flex-1 text-center border-r border-white/5">
+            <h2 class="text-4xl font-black">13+</h2>
+            <p class="text-sm text-white/40 font-bold mt-1">Reel</p>
+        </div>
+        <div class="flex-1 text-center border-r border-white/5">
+            <h2 class="text-4xl font-black">8+</h2>
+            <p class="text-sm text-white/40 font-bold mt-1">Postingan</p>
+        </div>
+        <div class="flex-1 text-center border-r border-white/5">
+            <h2 class="text-4xl font-black">10</h2>
+            <p class="text-sm text-white/40 font-bold mt-1">Mengikuti</p>
+        </div>
+        <div class="flex-1 text-center">
+            <h2 class="text-4xl font-black">4,5rb+</h2>
+            <p class="text-sm text-white/40 font-bold mt-1">Teman</p>
+        </div>
+    </footer>
+
+    <script>
+        function moveIndicator(el) {
+            const indicator = document.getElementById('nav-indicator');
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+            
+            document.querySelectorAll('#bento-nav button').forEach(btn => {
+                btn.classList.remove('bg-[#A000FF]', 'text-white');
+                btn.classList.add('text-white/40');
+            });
+            
+            if(el.innerText === 'Profile') {
+                el.classList.add('bg-[#A000FF]', 'text-white');
+                el.classList.remove('text-white/40');
+            } else {
+                el.classList.add('text-white');
+                el.classList.remove('text-white/40');
+            }
+        }
+
+        window.onload = () => {
+            const profileBtn = document.querySelector('#bento-nav button:last-child');
+            moveIndicator(profileBtn);
+        }
+    </script>
+</body>
+</html>
